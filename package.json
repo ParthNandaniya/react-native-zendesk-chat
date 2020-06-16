@@ -12,7 +12,10 @@
     "react-native-zendesk-chat.podspec"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "genversion --semi lib/version.js",
+    "build:clean": "rimraf android/build && rimraf ios/build",
+    "prepare": "yarn run build"
   },
   "repository": {
     "type": "git",
@@ -20,7 +23,13 @@
     "baseUrl": "https://github.com/ParthNandaniya/react-native-zendesk-chat"
   },
   "keywords": [
-    "react-native"
+    "react",
+    "react-native",
+    "zendesk",
+    "zendesk chat",
+    "zendesk chat api",
+    "chat",
+    "react native chat"
   ],
   "author": {
     "name": "Parth Nandaniya",

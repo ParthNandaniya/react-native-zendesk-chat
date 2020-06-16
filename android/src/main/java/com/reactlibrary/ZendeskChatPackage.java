@@ -1,5 +1,6 @@
 package com.reactlibrary;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -13,7 +14,10 @@ import com.facebook.react.bridge.JavaScriptModule;
 public class ZendeskChatPackage implements ReactPackage {
     @Override
     public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
-        return Arrays.<NativeModule>asList(new ZendeskChatModule(reactContext));
+        List<NativeModule> modules = new ArrayList<>();
+        modules.add(new ZendeskChatModule(reactContext));
+        modules.add(new ZendeskChatChatModule(reactContext));
+        return modules;
     }
 
     @Override

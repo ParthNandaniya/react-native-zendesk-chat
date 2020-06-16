@@ -53,6 +53,10 @@ android {
     lintOptions {
         abortOnError false
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 repositories {
@@ -68,11 +72,13 @@ repositories {
     }
     google()
     jcenter()
+    maven { url 'https://zendesk.jfrog.io/zendesk/repo' }
 }
 
 dependencies {
     //noinspection GradleDynamicVersion
     implementation 'com.facebook.react:react-native:+'  // From node_modules
+    implementation group: 'com.zendesk', name: 'chat-providers', version: '2.2.0'
 }
 
 def configureReactNativePom(def pom) {
